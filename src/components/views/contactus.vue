@@ -16,7 +16,7 @@
       <!--标题-->
       <div class="rhead">
         <div style="float: left; font-size: 25px;margin-top: 15px; color:cornflowerblue ">联系我们</div>
-        <div style="float: right;margin-top: 20px;">首页>联系我们></div>
+        <div style="float: right;margin-top: 20px;">首页>联系我们</div>
       </div>
       <!--设置宽度为800-->
       <div class="contact">
@@ -41,7 +41,6 @@
 <script>
 import BMap from 'BMap'
 import information from '../base/information'
-import img from '../../assets/img/img1.png'
 
 export default {
   name: 'contactus',
@@ -50,7 +49,7 @@ export default {
     return {
 
       news: [
-    ],
+      ],
       // 左边导航栏所有科目
       list: [{
         index: 1, content: '联系我们'
@@ -87,5 +86,6 @@ export default {
 
   .contact {
     width: 100%;
+
   }
 </style>
