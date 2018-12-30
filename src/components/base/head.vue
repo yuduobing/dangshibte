@@ -1,6 +1,27 @@
 <template>
-  <div style="background-color: powderblue;height: 100px;width: 100%;">
-    <h1>头部</h1>
+  <div style="width: 100%;">
+    <div class="head">
+      <div class="logo">
+        <img :src="img.logo" alt="欢迎访问砀石官网">
+      </div>
+      <div class="head_right">
+        <div class="phone">
+          <div style="width: 40px;height: 40px;float: left;margin-top: 5px;">
+            <img :src="img.phone">
+          </div>
+          <div style="height: 50px;float: right">
+            <div class="">
+              <span class="phone_num">123-0126948</span><br/>
+              <span style="font-size:14px;color:rgba(51,51,51,1);font-weight:500;
+  color:rgba(51,51,51,1);">全国服务热线</span>
+            </div>
+          </div>
+        </div>
+        <div class="seach">
+          <input type="text" placeholder="中央空调维保"/>
+        </div>
+      </div>
+    </div>
     <div class="navigation">
       <div class="nav_main">
         <div class="list" @click="changeBody('home')">首页</div>
@@ -18,46 +39,102 @@
 </template>
 
 <script>
-export default {
-  name: 'head',
-  data () {
-    return {
+  import logo from '../../assets/img/logo.png'
+  import phone from '../../assets/img/phone.png'
 
-    }
-  },
-  methods: {
-    changeBody (v) {
-      this.$emit('change', v)
+  export default {
+    name: 'head',
+    data () {
+      return {
+        img: {
+          logo, phone
+        }
+      }
+    },
+    methods: {
+      changeBody (v) {
+        this.$emit('change', v)
+      }
     }
   }
-}
 </script>
 
 <style scoped lang="less">
-.navigation{
-  width: 100%;
-  height: 45px;
-  background-color: #000080;
-  color: white;
-  .nav_main{
-    width: 1200px;
-    height: 100%;
-    margin: 0 auto;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    .list{
-      cursor:pointer;
-      text-align: center;
+  .navigation{
+    width: 100%;
+    height: 45px;
+    background-color: #003871;
+    color: white;
 
-      -webkit-box-flex: 1;
-      -webkit-flex: 1;
-      -ms-flex: 1;
-      flex: 1;
+    .nav_main{
+      width: 1200px;
+      height: 100%;
+      margin: 0 auto;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      .list{
+        cursor:pointer;
+        text-align: center;
 
-      line-height: 45px;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+
+        line-height: 45px;
+      }
+      .list:hover{
+        background-color: #003871 - 20;
+      }
     }
   }
-}
+
+  .head{
+    width: 1200px;
+    height: 120px;
+    margin: 0 auto;
+    /*background-color: aqua;*/
+    .logo{
+      float: left;
+      width: 327px;
+      height: 56px;
+      margin-top: 30px;
+      img{
+        width: 327px;
+        height: 56px;
+
+      }
+    }
+    .head_right{
+      width: 330px;
+      height: 90px;
+      float: right;
+      margin-top: 15px;
+      .phone{
+        float: right;
+        width: 190px;
+        height: 50px;
+
+        img{
+          width: 40px;
+          height: 40px;
+        }
+        .phone_num{
+          font-size:24px;
+          font-weight:bold;
+          color:rgba(0,57,113,1);
+          line-height:28px;
+        }
+      }
+      .seach{
+        clear: both;
+        input{
+          width: 330px;
+          height: 40px;
+        }
+      }
+    }
+  }
 </style>
