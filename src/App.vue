@@ -56,7 +56,7 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  min-width: 1224px;
 }
 *{
   padding: 0;

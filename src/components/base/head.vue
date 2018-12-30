@@ -61,6 +61,7 @@
 
 <style scoped lang="less">
   .navigation{
+    min-width: 1200px;
     width: 100%;
     height: 45px;
     background-color: #003871;
