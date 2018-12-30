@@ -27,6 +27,9 @@ import News from './components/views/news'
 import Aboutus from './components/views/aboutus'
 import Contactus from './components/views/contactus'
 
+//element 样式
+import 'element-ui/lib/theme-chalk/index.css'
+
 export default {
   name: 'App',
   components: {Head,

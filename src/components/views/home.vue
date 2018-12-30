@@ -214,6 +214,13 @@
   import experience5 from '../../assets/img/experience_5.png'
   import experience6 from '../../assets/img/experience_6.png'
 
+  import zf1 from '../../assets/img/zf1.jpg'
+  import zf2 from '../../assets/img/zf2.jpg'
+  import zf3 from '../../assets/img/zf3.jpg'
+
+  import office1 from '../../assets/img/office1.jpg'
+  import office2 from '../../assets/img/office2.jpg'
+
   import zhineng1 from '../../assets/img/zn1.jpg'
   import zhineng2 from '../../assets/img/zn2.jpg'
   import zhineng3 from '../../assets/img/zn3.jpg'
@@ -228,6 +235,11 @@
   import caseju5 from '../../assets/img/jy5.jpg'
   import caseju6 from '../../assets/img/jy6.jpg'
 
+  import hotel1 from '../../assets/img/hotel1.jpg'
+  import hotel2 from '../../assets/img/hotel2.jpg'
+  import hotel3 from '../../assets/img/hotel3.jpg'
+  import hotel4 from '../../assets/img/hotel4.jpg'
+
   import casecf1 from '../../assets/img/casecf1.jpg'
   import casecf2 from '../../assets/img/casecf2.jpg'
   import casecf3 from '../../assets/img/casecf3.jpg'
@@ -239,6 +251,7 @@
   import news2 from '../../assets/img/new_2.png'
   import news3 from '../../assets/img/new_3.png'
   import news4 from '../../assets/img/new_4.png'
+
   export default {
     name: 'home',
     data () {
@@ -250,11 +263,11 @@
         },
         yiliaoImg:{experience1, experience2, experience3, experience4, experience5, experience6},
         jiaoyuImg:{caseju1,caseju2,caseju3,caseju4,caseju5,caseju6,},
-        zhengfuImg:{experience1, experience2, experience3, experience4, experience5, experience6},
+        zhengfuImg:{zf1, zf2, zf3},
         gongchangImg:{casecf1,casecf2,casecf3,casecf4,casecf5,casecf6},
-        bangongshiImg:{experience1, experience2, experience3, experience4, experience5, experience6},
+        bangongshiImg:{office1, office2},
         zhinengImg:{zhineng1,zhineng2,zhineng3,zhineng4,zhineng5,zhineng6},
-        jiudianImg:{experience1, experience2, experience3, experience4, experience5, experience6},
+        jiudianImg:{hotel1,hotel2,hotel3,hotel4},
         showImg:{experience1, experience2, experience3, experience4, experience5, experience6}
       }
     },
