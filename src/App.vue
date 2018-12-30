@@ -61,6 +61,6 @@ export default {
 *{
   padding: 0;
   margin: 0;
-
+  font-family: PingFang-SC-Medium,'Avenir', Helvetica, Arial, sans-serif;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="face_img">
-      <img :src="img.homeFace" />
+      <!--<img :src="img.homeFace" />-->
     </div>
     <div class="service">
       <div class="up">
@@ -109,9 +109,82 @@
       </div>
     </div>
     <div class="experience">
-
+      <div class="up">
+        <div class="up_title">丰富的案例经验</div>
+        <span>多行业、多领域的案例解决方案，让您值得信赖</span>
+      </div>
+      <div class="down">
+        <div class="option">
+          <div class="option_list">医疗机构</div>
+          <div class="option_list">教育培训</div>
+          <div class="option_list">政府机关</div>
+          <div class="option_list">工厂厂房</div>
+          <div class="option_list">办公室</div>
+          <div class="option_list">智能家居</div>
+          <div class="option_list">酒店餐饮</div>
+        </div>
+        <div class="img_list">
+          <div class="item"><img :src="img.experience1" /></div>
+          <div class="item"><img :src="img.experience2" /></div>
+          <div class="item"><img :src="img.experience3" /></div>
+          <div class="item"><img :src="img.experience4" /></div>
+          <div class="item"><img :src="img.experience5" /></div>
+          <div class="item"><img :src="img.experience6" /></div>
+        </div>
+      </div>
     </div>
-    <div class="news"></div>
+    <div class="news">
+      <div class="up">
+        <div class="up_title">新闻资讯</div>
+      </div>
+      <div class="down">
+        <div class="news_list">
+          <img :src="img.news1" />
+          <div style="margin-top:25px;text-align: left;">
+            <div class="title">中央空调维修</div>
+            <div class="time">2018-10-10</div>
+            <div class="detail">
+              在卧室里面我们进行壁式的空是是是调就可以了，
+              因为挂壁式空调的三ssss生三生三世三是是是世三生三世试试功率大小
+            </div>
+          </div>
+        </div>
+        <div class="news_list">
+          <img :src="img.news2" />
+          <div style="margin-top:25px;text-align: left;">
+            <div class="title">中央空调维修</div>
+            <div class="time">2018-10-10</div>
+            <div class="detail">
+              在卧室里面我们进行壁式的空是是是调就可以了，
+              因为挂壁式空调的三ssss生三生三世三是是是世三生三世试试功率大小
+            </div>
+          </div>
+        </div>
+        <div class="news_list">
+          <img :src="img.news3" />
+          <div style="margin-top:25px;text-align: left;">
+            <div class="title">中央空调维修</div>
+            <div class="time">2018-10-10</div>
+            <div class="detail">
+              在卧室里面我们进行壁式的空是是是调就可以了，
+              因为挂壁式空调的三ssss生三生三世三是是是世三生三世试试功率大小
+            </div>
+          </div>
+        </div>
+        <div class="news_list">
+          <img :src="img.news4" />
+          <div style="margin-top:25px;text-align: left;">
+            <div class="title">中央空调维修</div>
+            <div class="time">2018-10-10</div>
+            <div class="detail">
+              在卧室里面我们进行壁式的空是是是调就可以了，
+              因为挂壁式空调的三ssss生三生三世三是是是世三生三世试试功率大小
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="height: 80px;"></div>
   </div>
 </template>
 
@@ -132,13 +205,27 @@
   import advantage_design from '../../assets/img/advantage_design.png'
   import advantage_install from '../../assets/img/advantage_install.png'
   import advantage_service from '../../assets/img/advantage_service.png'
+
+  import experience1 from '../../assets/img/experience_1.png'
+  import experience2 from '../../assets/img/experience_2.png'
+  import experience3 from '../../assets/img/experience_3.png'
+  import experience4 from '../../assets/img/experience_4.png'
+  import experience5 from '../../assets/img/experience_5.png'
+  import experience6 from '../../assets/img/experience_6.png'
+
+  import news1 from '../../assets/img/new_1.png'
+  import news2 from '../../assets/img/new_2.png'
+  import news3 from '../../assets/img/new_3.png'
+  import news4 from '../../assets/img/new_4.png'
   export default {
     name: 'home',
     data () {
       return {
         img: {
           homeFace, fw1, fw2, fw3, fw4, fw5, fw6, fw7, fw8,
-          advantage_team, advantage_design, advantage_install, advantage_service, process
+          advantage_team, advantage_design, advantage_install, advantage_service, process,
+          experience1, experience2, experience3, experience4, experience5, experience6,
+          news1, news2, news3, news4
         }
       }
     }
@@ -149,13 +236,20 @@
   .main{
     font-size: 16px;
     .face_img{
-      margin: 0 auto;
-      width:1920px;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      display: block;
+      outline: none;
+      position: relative;
+      background-size: cover;
+      background-image: url("../../assets/img/home_face.png");
+      /*margin: 0 auto;*/
+      width:100%;
       height:820px;
-      img{
-        width:1920px;
-        height:820px;
-      }
+      /*img{*/
+        /*width:100%;*/
+        /*height:820px;*/
+      /*}*/
     }
     .service{
       width: 1224px;
@@ -289,10 +383,131 @@
       }
     }
     .experience{
+      width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      .up{
+        margin-top: 70px;
+        span{
+          font-size:24px;
+          font-weight:500;
+          color:rgba(51,51,51,1);
+          line-height:35px;
+        }
+        .up_title{
+          font-size:52px;
+          font-weight:500;
+          color:rgba(51,51,51,1);
+          line-height:73px;
+        }
+      }
+      .down{
+        .option{
+          margin-top: 40px;
+          width: 100%;
+          height: 70px;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          .option_list{
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            text-align: center;
+            font-size:26px;
+            font-weight:500;
+            color:rgba(51,51,51,1);
+            line-height:37px;
+            line-height: 70px;
+          }
+          .option_list:hover{
+            border-bottom: 5px solid #003971;
+            cursor:pointer;
+          }
+        }
+        .img_list{
+          width: 100%;
+          height: 570px;
+          .item{
+            float: left;
+            width: 360px;
+            height: 237px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 30px;
+            img{
+              width: 360px;
+              height: 237px;
+              border-radius: 8px;
+            }
+          }
+        }
+      }
+
 
     }
     .news{
+      width: 1232px;
+      margin: 0 auto;
+      text-align: center;
+      .up{
+        margin-top: 70px;
+        .up_title{
+          font-size:52px;
+          font-weight:500;
+          color:rgba(51,51,51,1);
+          line-height:73px;
+        }
+      }
+      .down{
+        width: 100%;
+        height: 370px;
+        margin-top: 49px;
+        .news_list{
+          width:276px;
+          height: 370px;
+          float: left;
+          margin-left: 16px;
+          margin-right: 16px;
+          /*background-color: blanchedalmond;*/
+          img{
+            width:276px;
+            height: 180px;
+            border-radius: 8px;
+          }
+        }
+        .title{
+          font-size:22px;
+          font-weight:800;
+          color:rgba(51,51,51,1);
+          line-height:30px;
+        }
+        .time{
+          font-size:16px;
+          line-height:30px;
+          font-weight:500;
+          color:rgba(51,51,51,1);
+        }
+        .detail{
+          font-size:16px;
+          font-weight:500;
+          color:rgba(102,102,102,1);
+          line-height:25px;
+          max-height: 75px;
+          width: 276px;
 
+          text-align:justify;
+          letter-spacing: 0;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          word-break: break-all;
+        }
+      }
     }
   }
 </style>
