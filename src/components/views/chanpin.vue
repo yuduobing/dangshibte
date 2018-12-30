@@ -16,8 +16,8 @@
           <div class="right">
             <!--标题-->
             <div class="rhead">
-              <div style="float: left; font-size: 25px;margin-top: 15px; color:cornflowerblue ">产品列表</div>
-              <div style="float: right;margin-top: 20px;">首页>中央空调></div>
+              <div style="float: left; font-size: 25px;margin-top: 15px; color:cornflowerblue ">产品中心</div>
+              <div style="float: right;margin-top: 20px;">首页>产品中心></div>
             </div>
             <!--新闻列表-->
             <div @click="change(item.title)" v-for="(item,index) in news" :key="index">
@@ -28,7 +28,7 @@
                 <div class="new-content">
 
                   <h1>{{item.title}}</h1>
-                  <p> {{item.content}} </p>
+                  <div  class="news-text"> {{item.content}} </div>
 
                 </div>
               </div>
@@ -75,7 +75,22 @@
           methods: {
             changelist (e) {
               // 点击左侧导航栏对应的事件
-              console.log(e)
+              if(e===1){
+                console.log("进来了")
+                this.news = this.news1.slice(0)
+                console.log(this.news)
+              }
+              else if(e===2){
+                console.log("进来了")
+                this.news = this.news2.slice(0)
+                console.log(this.news)
+              }
+              else if(e===3){
+                this.news = this.news3.slice(0)
+              }
+              else if(e===4){
+                this.news = this.news4.slice(0)
+              }
             }
 
           }

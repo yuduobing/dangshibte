@@ -7,7 +7,7 @@
 
     <div class="left">
       <div class="list">
-        <div class="title">多联机机组维护</div>
+        <div class="title">中央空调维保</div>
         <div @click="changelist(item.index)" v-for="(item,index) in list " :key="index">
           <div class="content">{{item.content}}</div>
         </div>
@@ -31,7 +31,7 @@
           <div class="new-content">
 
             <h1>{{item.title}}</h1>
-            <p> {{item.content}} </p>
+            <div  class="news-text"> {{item.content}} </div>
 
           </div>
         </div>
@@ -52,7 +52,7 @@
     components: {information},
     data () {
       return {
-
+    //暂存数组
         news: [
           {
             title: '超级多联3Max/4Max系列',
@@ -66,20 +66,8 @@
             content:
               '可根据个性化需求进行组合满足不同需求多种室内形式能够与家居装潢完美配合拥有先进的静音技术，室内机转音...'
           }],
+        //默认数组
         news1: [
-          {
-            title: '阿法拉伐钎焊接换热器油冷却CB200',
-            img: img,
-            content:
-              '可根据个性化需求进行组合满足不同需求多种室内形式能够与家居装潢完美配合拥有先进的静音技术，室内机转音...'
-          },
-          {
-            title: '阿法拉伐钎焊接换热器油冷却CB200',
-            img: img,
-            content:
-              '可根据个性化需求进行组合满足不同需求多种室内形式能够与家居装潢完美配合拥有先进的静音技术，室内机转音...'
-          }],
-        news2: [
           {
             title: '超级多联3Max/4Max系列',
             img: img,
@@ -94,17 +82,31 @@
           }],
         news3: [
           {
-            title: '超级多联3Max/4Max系列',
+            title: '阿法拉伐钎焊接换热器油冷却CB200',
             img: img,
             content:
               '可根据个性化需求进行组合满足不同需求多种室内形式能够与家居装潢完美配合拥有先进的静音技术，室内机转音...'
           },
           {
-            title: '超级多联3Max/4Max系列',
+            title: '阿法拉伐钎焊接换热器油冷却CB200',
             img: img,
             content:
               '可根据个性化需求进行组合满足不同需求多种室内形式能够与家居装潢完美配合拥有先进的静音技术，室内机转音...'
           }],
+        news2: [
+          {
+            title: '德国GEA板式换热器',
+            img: img,
+            content:
+              '可根据个性化需求进行组合满足不同需求多种室内形式能够与家居装潢完美配合拥有先进的静音技术，室内机转音...'
+          },
+          {
+            title: '德国GEA板式换热器/4Max系列',
+            img: img,
+            content:
+              '可根据个性化需求进行组合满足不同需求多种室内形式能够与家居装潢完美配合拥有先进的静音技术，室内机转音...'
+          }],
+
           news4: [
         {
           title: '超级多联3Max/4Max系列',
@@ -148,9 +150,15 @@
       changelist (e) {
         // 点击左侧导航栏对应的事件
         console.log(e)
-       if(e===2){
+        if(e===1){
+          console.log("进来了")
+          this.news = this.news1.slice(0)
+          console.log(this.news)
+        }
+        else if(e===2){
          console.log("进来了")
          this.news = this.news2.slice(0)
+         console.log(this.news)
        }
         else if(e===3){
           this.news = this.news3.slice(0)
@@ -158,6 +166,7 @@
        else if(e===4){
           this.news = this.news4.slice(0)
         }
+
 
       }
 

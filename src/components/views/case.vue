@@ -27,7 +27,7 @@
             <div class="new-content">
 
               <h1>{{item.title}}</h1>
-              <p> {{item.content}} </p>
+              <div  class="news-text"> {{item.content}} </div>
 
             </div>
           </div>
@@ -74,7 +74,22 @@
       methods: {
         changelist (e) {
           // 点击左侧导航栏对应的事件
-          console.log(e)
+          if(e===1){
+            console.log("进来了")
+            this.news = this.news1.slice(0)
+            console.log(this.news)
+          }
+          else if(e===2){
+            console.log("进来了")
+            this.news = this.news2.slice(0)
+            console.log(this.news)
+          }
+          else if(e===3){
+            this.news = this.news3.slice(0)
+          }
+          else if(e===4){
+            this.news = this.news4.slice(0)
+          }
         }
 
       }
