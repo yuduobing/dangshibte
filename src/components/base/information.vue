@@ -1,7 +1,7 @@
 <template>
   <div class="font">
     <div class="icon">
-      <img src="../../assets/img/tel.png" class="face_img"   />
+      <img src="../../assets/img/tel.png" class="icon_img"   />
       全国服务热线<br>123-0126948
     </div>
 
@@ -23,6 +23,7 @@ export default {
     margin-top: 30px;
     width: 280px;
     margin-left: 10px;
+
     .icon{
       border: 1px dashed lightgrey;
 
@@ -30,7 +31,7 @@ export default {
       padding-top: 30px;
       padding-bottom: 30px;
       font-size: 20px;
-      .face_img{
+      .icon_img{
         float: left;
         margin-left: 30px;
         width: 60px;height: 60px

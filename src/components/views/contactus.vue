@@ -1,6 +1,9 @@
 <template>
-  <div style="width: 1200px;margin: 0 auto;overflow: hidden">
-
+  <div>
+  <div class="faces_img">
+    <img src="../../assets/img/contact.png" />
+  </div>
+  <div style="width: 1200px;margin: 0 auto;overflow: hidden;padding-bottom: 60px">
     <div class="left">
       <div class="list">
         <div class="title">联系我们</div>
@@ -31,11 +34,11 @@
         <br>
         <p> 地址：上海市宝山区吉浦路545-551号2398室</p>
         <br>
-        <div style="width:100%;height:550px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+        <div style="width:100%;height:450px;border:#ccc solid 1px;font-size:12px" id="map"></div>
       </div>
     </div>
   </div>
-
+  </div>
 </template>
 
 <script>
