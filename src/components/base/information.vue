@@ -23,6 +23,7 @@ export default {
     margin-top: 30px;
     width: 280px;
     margin-left: 10px;
+    padding-bottom:20px ;
 
     .icon{
       border: 1px dashed lightgrey;
