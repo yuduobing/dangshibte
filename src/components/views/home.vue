@@ -115,21 +115,22 @@
       </div>
       <div class="down">
         <div class="option">
-          <div class="option_list">医疗机构</div>
-          <div class="option_list">教育培训</div>
-          <div class="option_list">政府机关</div>
-          <div class="option_list">工厂厂房</div>
-          <div class="option_list">办公室</div>
-          <div class="option_list">智能家居</div>
-          <div class="option_list">酒店餐饮</div>
+          <div class="option_list" @click="changeImg('yiliao')">医疗机构</div>
+          <div class="option_list" @click="changeImg('jiaoyu')">教育培训</div>
+          <div class="option_list" @click="changeImg('zhengfu')">政府机关</div>
+          <div class="option_list" @click="changeImg('gongchang')">工厂厂房</div>
+          <div class="option_list" @click="changeImg('bangongshi')">办公室</div>
+          <div class="option_list" @click="changeImg('zhineng')">智能家居</div>
+          <div class="option_list" @click="changeImg('jiudian')">酒店餐饮</div>
         </div>
         <div class="img_list">
-          <div class="item"><img :src="img.experience1" /></div>
-          <div class="item"><img :src="img.experience2" /></div>
-          <div class="item"><img :src="img.experience3" /></div>
-          <div class="item"><img :src="img.experience4" /></div>
-          <div class="item"><img :src="img.experience5" /></div>
-          <div class="item"><img :src="img.experience6" /></div>
+          <!--<div class="item"><img :src="showImg.experience1" /></div>-->
+          <!--<div class="item"><img :src="showImg.experience2" /></div>-->
+          <!--<div class="item"><img :src="showImg.experience3" /></div>-->
+          <!--<div class="item"><img :src="showImg.experience4" /></div>-->
+          <!--<div class="item"><img :src="showImg.experience5" /></div>-->
+          <!--<div class="item"><img :src="showImg.experience6" /></div>-->
+          <div class="item" v-for="i in showImg"><img :src="i" /></div>
         </div>
       </div>
     </div>
@@ -213,6 +214,27 @@
   import experience5 from '../../assets/img/experience_5.png'
   import experience6 from '../../assets/img/experience_6.png'
 
+  import zhineng1 from '../../assets/img/zn1.jpg'
+  import zhineng2 from '../../assets/img/zn2.jpg'
+  import zhineng3 from '../../assets/img/zn3.jpg'
+  import zhineng4 from '../../assets/img/zn4.jpg'
+  import zhineng5 from '../../assets/img/zn5.jpg'
+  import zhineng6 from '../../assets/img/zn6.jpg'
+
+  import caseju1 from '../../assets/img/jy1.jpg'
+  import caseju2 from '../../assets/img/jy2.jpg'
+  import caseju3 from '../../assets/img/jy3.jpg'
+  import caseju4 from '../../assets/img/jy4.jpg'
+  import caseju5 from '../../assets/img/jy5.jpg'
+  import caseju6 from '../../assets/img/jy6.jpg'
+
+  import casecf1 from '../../assets/img/casecf1.jpg'
+  import casecf2 from '../../assets/img/casecf2.jpg'
+  import casecf3 from '../../assets/img/casecf3.jpg'
+  import casecf4 from '../../assets/img/casecf4.jpg'
+  import casecf5 from '../../assets/img/casecf5.jpg'
+  import casecf6 from '../../assets/img/casecf6.jpg'
+
   import news1 from '../../assets/img/new_1.png'
   import news2 from '../../assets/img/new_2.png'
   import news3 from '../../assets/img/new_3.png'
@@ -224,8 +246,39 @@
         img: {
           homeFace, fw1, fw2, fw3, fw4, fw5, fw6, fw7, fw8,
           advantage_team, advantage_design, advantage_install, advantage_service, process,
-          experience1, experience2, experience3, experience4, experience5, experience6,
           news1, news2, news3, news4
+        },
+        yiliaoImg:{experience1, experience2, experience3, experience4, experience5, experience6},
+        jiaoyuImg:{caseju1,caseju2,caseju3,caseju4,caseju5,caseju6,},
+        zhengfuImg:{experience1, experience2, experience3, experience4, experience5, experience6},
+        gongchangImg:{casecf1,casecf2,casecf3,casecf4,casecf5,casecf6},
+        bangongshiImg:{experience1, experience2, experience3, experience4, experience5, experience6},
+        zhinengImg:{zhineng1,zhineng2,zhineng3,zhineng4,zhineng5,zhineng6},
+        jiudianImg:{experience1, experience2, experience3, experience4, experience5, experience6},
+        showImg:{experience1, experience2, experience3, experience4, experience5, experience6}
+      }
+    },
+    methods: {
+      changeImg (value) {
+        if( value === 'yiliao'){
+          this.showImg = this.yiliaoImg
+        }
+        if(value === 'jiaoyu'){
+          this.showImg = this.jiaoyuImg
+        }
+        if(value === 'zhengfu'){
+          this.showImg = this.zhengfuImg
+        }
+        if(value === 'gongchang'){
+          this.showImg = this.gongchangImg
+        }
+        if(value === 'bangongshi'){
+          this.showImg = this.bangongshiImg
+        }
+        if(value === 'zhineng'){
+          this.showImg = this.zhinengImg
+        }if(value === 'jiudian'){
+          this.showImg = this.jiudianImg
         }
       }
     }
@@ -241,18 +294,20 @@
       display: block;
       outline: none;
       position: relative;
-      background-size: cover;
+      background-size: 100% 100%;
       background-image: url("../../assets/img/home_face.png");
       /*margin: 0 auto;*/
       width:100%;
+      min-width: 1200px;
       height:820px;
+      max-height: 820px;
       /*img{*/
         /*width:100%;*/
         /*height:820px;*/
       /*}*/
     }
     .service{
-      width: 1224px;
+      width: 1200px;
       margin: 0 auto;
       text-align: center;
       .up{
@@ -280,8 +335,8 @@
             float: left;
             width: 282px;
             height: 202px;
-            margin-left: 12px;
-            margin-right: 12px;
+            margin-left: 9px;
+            margin-right: 9px;
             background-color: yellow;
             border-radius: 5px;
             img{
@@ -300,7 +355,7 @@
       }
     }
     .advantage{
-      width: 1224px;
+      width: 1200px;
       margin: 0 auto;
       text-align: center;
       .up{
@@ -325,8 +380,8 @@
         .list{
           width: 282px;
           height: 100%;
-          margin-left: 12px;
-          margin-right: 12px;
+          margin-left: 9px;
+          margin-right: 9px;
           /*background-color: darkgray;*/
           float: left;
           .list_img{
@@ -426,6 +481,9 @@
             border-bottom: 5px solid #003971;
             cursor:pointer;
           }
+          .option_list:visited{
+            color: red;
+          }
         }
         .img_list{
           width: 100%;
@@ -449,7 +507,7 @@
 
     }
     .news{
-      width: 1232px;
+      width: 1200px;
       margin: 0 auto;
       text-align: center;
       .up{
@@ -469,8 +527,8 @@
           width:276px;
           height: 370px;
           float: left;
-          margin-left: 16px;
-          margin-right: 16px;
+          margin-left: 12px;
+          margin-right: 12px;
           /*background-color: blanchedalmond;*/
           img{
             width:276px;
