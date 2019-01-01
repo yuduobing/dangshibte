@@ -18,7 +18,10 @@
           </div>
         </div>
         <div class="seach">
-          <input type="text" placeholder="中央空调维保"/>
+          <!--<input type="text" placeholder="中央空调维保"/>-->
+          <Input placeholder="请输入内容...">
+            <i slot="suffix" class="el-input__icon el-icon-search"></i>
+          </Input>
         </div>
       </div>
     </div>
@@ -42,8 +45,11 @@
   import logo from '../../assets/img/logo.png'
   import phone from '../../assets/img/phone.png'
 
+
+  import { Input } from  'element-ui'
   export default {
     name: 'head',
+    components: { Input },
     data () {
       return {
         img: {
@@ -131,10 +137,11 @@
       }
       .seach{
         clear: both;
-        input{
-          width: 330px;
-          height: 40px;
-        }
+        padding-top: 5px;
+        /*input{*/
+          /*width: 330px;*/
+          /*height: 40px;*/
+        /*}*/
       }
     }
   }

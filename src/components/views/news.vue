@@ -3,7 +3,7 @@
     <div class="faces_img">
       <img src="../../assets/img/news.png" />
     </div>
-    <div style="width: 1200px;margin: 0 auto;overflow: hidden;min-height: 700px; padding-bottom: 60px">
+    <div style="width: 1200px;margin: 0 auto;overflow: hidden;min-height: 700px; padding-bottom: 30px">
 
     <div class="left">
       <div class="list">
@@ -37,6 +37,15 @@
           </div>
         </div>
       </div>
+      <div style="width: 100%;text-align: center;padding-top: 25px;">
+        <Pagination
+          background
+          :page-size="pageData.page_size"
+          layout="prev, pager, next"
+          @current-change="currentPage"
+          :total="pageData.total">
+        </Pagination>
+      </div>
     </div>
     </transition>
       <div v-if="cshow" class="right"  >
@@ -64,11 +73,22 @@
   import information from '../base/information'
   import img from '../../assets/img/img1.png'
 
+
+  import { Pagination } from 'element-ui'
+
+  import ax from 'axios'
+
   export default {
     name: 'news',
-    components: {information},
+    components: {information, Pagination},
     data () {
       return {
+        pageData:{
+          total: 10,
+          page_size: 4,
+          page: 0 //当前页面
+
+        },
         // 显示新闻列表
         show: true,
 // 显示详情
@@ -119,6 +139,19 @@
     },
 
     methods: {
+      currentPage (v) {
+        this.pageData.page = v
+        alert(v)
+        this.$http({
+          url: 'http://www.chinazishun.com/home/case/getCaseList',
+          methods: 'get',
+          params: {
+
+          }
+        }).then(res =>{
+          alert(res)
+        })
+      },
       changelist (e) {
         // 点击左侧导航栏对应的事件
         console.log(e)

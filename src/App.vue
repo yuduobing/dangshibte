@@ -5,7 +5,7 @@
 
     <!--<router-view/>-->
     <!--网页最小高度600,，最小宽度1200-->
-    <div style="min-width: 1200px;min-height: 600px;  background-color: #f5f5f5;">
+    <div style="min-width: 1200px;min-height: 600px;">
       <component :is=" comp "></component>
     </div>
 
@@ -26,6 +26,9 @@ import Case from './components/views/case'
 import News from './components/views/news'
 import Aboutus from './components/views/aboutus'
 import Contactus from './components/views/contactus'
+
+//element 样式
+import 'element-ui/lib/theme-chalk/index.css'
 
 export default {
   name: 'App',
@@ -56,7 +59,7 @@ export default {
 
 <style>
 #app {
-  min-width: 1224px;
+  /*min-width: 1200px;*/
 }
 *{
   padding: 0;

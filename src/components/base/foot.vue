@@ -86,7 +86,7 @@ export default {
   .boot{
     width: 100%;
     color: white;
-
+    min-width: 1200px;
   }
   .list{
     height: 300px;
