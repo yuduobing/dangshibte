@@ -5,7 +5,7 @@
 
     <!--<router-view/>-->
     <!--网页最小高度600,，最小宽度1200-->
-    <div style="min-width: 1200px;min-height: 600px;">
+    <div style="min-width: 1200px;min-height: 600px;background-color: #F5F5F5">
       <component :is=" comp "></component>
     </div>
 

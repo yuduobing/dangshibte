@@ -1,7 +1,8 @@
 <template>
   <div class="main">
     <div class="face_img">
-      <!--<img :src="img.homeFace" />-->
+      <img :src="img.homeFace"  style="  width: 100%;
+  min-width: 1200px;"/>
     </div>
     <div class="service">
       <div class="up">
@@ -11,37 +12,37 @@
       <div class="down">
         <div class="down_1">
           <div class="list">
-            <img :src="img.fw1" />
+            <img :src="img.fw1"/>
             <span>中央空调维保</span>
           </div>
           <div class="list">
-            <img :src="img.fw2" />
+            <img :src="img.fw2"/>
             <span>板式换热器维保</span>
           </div>
           <div class="list">
-            <img :src="img.fw3" />
+            <img :src="img.fw3"/>
             <span>多联机机组维保</span>
           </div>
           <div class="list">
-            <img :src="img.fw4" />
+            <img :src="img.fw4"/>
             <span>中央空调改造</span>
           </div>
         </div>
         <div class="down_1">
           <div class="list">
-            <img :src="img.fw5" />
+            <img :src="img.fw5"/>
             <span>中央空调清洗</span>
           </div>
           <div class="list">
-            <img :src="img.fw6" />
+            <img :src="img.fw6"/>
             <span>中央空调托管</span>
           </div>
           <div class="list">
-            <img :src="img.fw7" />
+            <img :src="img.fw7"/>
             <span>中央空调安装</span>
           </div>
           <div class="list">
-            <img :src="img.fw8" />
+            <img :src="img.fw8"/>
             <span>中央空调水处理</span>
           </div>
         </div>
@@ -55,7 +56,7 @@
       <div class="down">
         <div class="list">
           <div class="list_img">
-            <img :src="img.advantage_team" />
+            <img :src="img.advantage_team"/>
           </div>
           <div class="list_subject">
             销售团队
@@ -66,7 +67,7 @@
         </div>
         <div class="list">
           <div class="list_img">
-            <img :src="img.advantage_design" />
+            <img :src="img.advantage_design"/>
           </div>
           <div class="list_subject">
             专业设计
@@ -77,7 +78,7 @@
         </div>
         <div class="list">
           <div class="list_img">
-            <img :src="img.advantage_install" />
+            <img :src="img.advantage_install"/>
           </div>
           <div class="list_subject">
             施工安装
@@ -88,7 +89,7 @@
         </div>
         <div class="list">
           <div class="list_img">
-            <img :src="img.advantage_service" />
+            <img :src="img.advantage_service"/>
           </div>
           <div class="list_subject">
             专业服务
@@ -104,7 +105,7 @@
         <div class="system_title">完善的体系</div>
         <div class="system_detail">严谨的管理制度，完善的服务流程，一站式体系，让你全程无忧</div>
         <div class="system_process">
-          <img :src="img.process" />
+          <img :src="img.process" @load="loding"/>
         </div>
       </div>
     </div>
@@ -130,7 +131,7 @@
           <!--<div class="item"><img :src="showImg.experience4" /></div>-->
           <!--<div class="item"><img :src="showImg.experience5" /></div>-->
           <!--<div class="item"><img :src="showImg.experience6" /></div>-->
-          <div class="item" v-for="i in showImg"><img :src="i" /></div>
+          <div class="item" v-for="i in showImg"><img :src="i"/></div>
         </div>
       </div>
     </div>
@@ -140,7 +141,7 @@
       </div>
       <div class="down">
         <div class="news_list">
-          <img :src="img.news1" />
+          <img :src="img.news1" @load="loding"/>
           <div style="margin-top:25px;text-align: left;">
             <div class="title">中央空调维修</div>
             <div class="time">2018-10-10</div>
@@ -151,7 +152,7 @@
           </div>
         </div>
         <div class="news_list">
-          <img :src="img.news2" />
+          <img :src="img.news2" @load="loding"/>
           <div style="margin-top:25px;text-align: left;">
             <div class="title">中央空调维修</div>
             <div class="time">2018-10-10</div>
@@ -162,7 +163,7 @@
           </div>
         </div>
         <div class="news_list">
-          <img :src="img.news3" />
+          <img :src="img.news3" @load="loding"/>
           <div style="margin-top:25px;text-align: left;">
             <div class="title">中央空调维修</div>
             <div class="time">2018-10-10</div>
@@ -173,7 +174,7 @@
           </div>
         </div>
         <div class="news_list">
-          <img :src="img.news4" />
+          <img :src="img.news4"/>
           <div style="margin-top:25px;text-align: left;">
             <div class="title">中央空调维修</div>
             <div class="time">2018-10-10</div>
@@ -199,7 +200,7 @@
   import fw6 from '../../assets/img/fw6.jpg'
   import fw7 from '../../assets/img/fw7.jpg'
   import fw8 from '../../assets/img/fw8.jpg'
-
+  import loding from '../../assets/img/loding.png'
   import process from '../../assets/img/process.png'
 
   import advantage_team from '../../assets/img/advantage_team.png'
@@ -259,38 +260,39 @@
         img: {
           homeFace, fw1, fw2, fw3, fw4, fw5, fw6, fw7, fw8,
           advantage_team, advantage_design, advantage_install, advantage_service, process,
-          news1, news2, news3, news4
+          news1, news2, news3, news4, loding
         },
-        yiliaoImg:{experience1, experience2, experience3, experience4, experience5, experience6},
-        jiaoyuImg:{caseju1,caseju2,caseju3,caseju4,caseju5,caseju6,},
-        zhengfuImg:{zf1, zf2, zf3},
-        gongchangImg:{casecf1,casecf2,casecf3,casecf4,casecf5,casecf6},
-        bangongshiImg:{office1, office2},
-        zhinengImg:{zhineng1,zhineng2,zhineng3,zhineng4,zhineng5,zhineng6},
-        jiudianImg:{hotel1,hotel2,hotel3,hotel4},
-        showImg:{experience1, experience2, experience3, experience4, experience5, experience6}
+        yiliaoImg: {experience1, experience2, experience3, experience4, experience5, experience6},
+        jiaoyuImg: {caseju1, caseju2, caseju3, caseju4, caseju5, caseju6,},
+        zhengfuImg: {zf1, zf2, zf3},
+        gongchangImg: {casecf1, casecf2, casecf3, casecf4, casecf5, casecf6},
+        bangongshiImg: {office1, office2},
+        zhinengImg: {zhineng1, zhineng2, zhineng3, zhineng4, zhineng5, zhineng6},
+        jiudianImg: {hotel1, hotel2, hotel3, hotel4},
+        showImg: {experience1, experience2, experience3, experience4, experience5, experience6}
       }
     },
     methods: {
       changeImg (value) {
-        if( value === 'yiliao'){
+        if (value === 'yiliao') {
           this.showImg = this.yiliaoImg
         }
-        if(value === 'jiaoyu'){
+        if (value === 'jiaoyu') {
           this.showImg = this.jiaoyuImg
         }
-        if(value === 'zhengfu'){
+        if (value === 'zhengfu') {
           this.showImg = this.zhengfuImg
         }
-        if(value === 'gongchang'){
+        if (value === 'gongchang') {
           this.showImg = this.gongchangImg
         }
-        if(value === 'bangongshi'){
+        if (value === 'bangongshi') {
           this.showImg = this.bangongshiImg
         }
-        if(value === 'zhineng'){
+        if (value === 'zhineng') {
           this.showImg = this.zhinengImg
-        }if(value === 'jiudian'){
+        }
+        if (value === 'jiudian') {
           this.showImg = this.jiudianImg
         }
       }
@@ -299,178 +301,180 @@
 </script>
 
 <style scoped lang="less">
-  .main{
+  .main {
     font-size: 16px;
-    .face_img{
-      background-repeat: no-repeat;
+    .face_img {
+
       overflow: hidden;
       display: block;
       outline: none;
       position: relative;
-      background-size: 100% 100%;
-      background-image: url("../../assets/img/home_face.png");
+
       /*margin: 0 auto;*/
-      width:100%;
+      width: 100%;
+
       min-width: 1200px;
-      height:820px;
-      max-height: 820px;
+
+
       /*img{*/
-        /*width:100%;*/
-        /*height:820px;*/
+      /*width:100%;*/
+      /*height:820px;*/
       /*}*/
     }
-    .service{
+    .service {
       width: 1200px;
       margin: 0 auto;
       text-align: center;
-      .up{
+      .up {
         margin-top: 70px;
-        span{
-          font-size:24px;
-          font-weight:500;
-          color:rgba(51,51,51,1);
-          line-height:35px;
+        span {
+          font-size: 24px;
+          font-weight: 500;
+          color: rgba(51, 51, 51, 1);
+          line-height: 35px;
         }
-        .up_title{
-          font-size:52px;
-          font-weight:500;
-          color:rgba(51,51,51,1);
-          line-height:73px;
+        .up_title {
+          font-size: 42px;
+          font-weight: 400;
+          color: rgba(51, 51, 51, 1);
+          line-height: 73px;
         }
       }
-      .down{
+      .down {
         margin-top: 50px;
-        .down_1{
+        .down_1 {
           margin-top: 25px;
           height: 250px;
           width: 100%;
-          .list{
+          .list {
             float: left;
             width: 282px;
             height: 202px;
             margin-left: 9px;
             margin-right: 9px;
-            background-color: yellow;
+            background-image: url("../../assets/img/loding.png");
             border-radius: 5px;
-            img{
+            img {
               width: 282px;
               height: 202px;
               border-radius: 5px;
             }
-            span{
-              font-size:24px;
-              font-weight:500;
-              color:rgba(51,51,51,1);
-              line-height:33px;
+            span {
+              font-size: 24px;
+              font-weight: 500;
+              color: rgba(51, 51, 51, 1);
+              line-height: 33px;
             }
           }
         }
       }
     }
-    .advantage{
+    .advantage {
       width: 1200px;
       margin: 0 auto;
       text-align: center;
-      .up{
+      .up {
         margin-top: 70px;
-        span{
-          font-size:24px;
-          font-weight:500;
-          color:rgba(51,51,51,1);
-          line-height:35px;
+        span {
+          font-size: 24px;
+          font-weight: 500;
+          color: rgba(51, 51, 51, 1);
+          line-height: 35px;
         }
-        .up_title{
-          font-size:52px;
-          font-weight:500;
-          color:rgba(51,51,51,1);
-          line-height:73px;
+        .up_title {
+          font-size: 42px;
+          font-weight: 400;
+
+          color: rgba(51, 51, 51, 1);
+          line-height: 73px;
         }
       }
-      .down{
+      .down {
         margin-top: 58px;
         height: 329px;
         width: 100%;
-        .list{
+        .list {
           width: 282px;
           height: 100%;
           margin-left: 9px;
           margin-right: 9px;
           /*background-color: darkgray;*/
           float: left;
-          .list_img{
+          .list_img {
             width: 150px;
             height: 150px;
             margin: 0 auto;
-            img{
+            img {
               width: 150px;
               height: 150px;
             }
           }
-          .list_subject{
-            font-size:28px;
-            font-weight:600;
-            line-height:40px;
+          .list_subject {
+            font-size: 27px;
+            font-weight: 600;
+            line-height: 40px;
+            margin: 10px;
           }
-          .list_detail{
-            font-size:20px;
-            font-weight:500;
+          .list_detail {
+            font-size: 20px;
+            font-weight: 500;
             color: #666666;
-            line-height:28px;
+            line-height: 28px;
           }
         }
       }
     }
-    .system{
+    .system {
       text-align: center;
       width: 100%;
       height: 460px;
       margin-top: 60px;
       background-color: #56ADE6;
-      .system_title{
+      .system_title {
         /*background-color: red;*/
-        font-size:52px;
-        font-weight:500;
-        color:rgba(255,255,255,1);
-        line-height:190px;
+        font-size: 52px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 1);
+        line-height: 190px;
         height: 140px;
       }
-      .system_detail{
-        font-size:24px;
-        font-weight:500;
-        color:rgba(255,255,255,1);
-        line-height:33px;
+      .system_detail {
+        font-size: 24px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 1);
+        line-height: 33px;
       }
-      .system_process{
+      .system_process {
         margin-top: 60px;
         width: 100%;
         height: 126px;
-        img{
+        img {
           width: 100%;
           height: 126px;
         }
       }
     }
-    .experience{
+    .experience {
       width: 1200px;
       margin: 0 auto;
       text-align: center;
-      .up{
+      .up {
         margin-top: 70px;
-        span{
-          font-size:24px;
-          font-weight:500;
-          color:rgba(51,51,51,1);
-          line-height:35px;
+        span {
+          font-size: 24px;
+          font-weight: 500;
+          color: rgba(51, 51, 51, 1);
+          line-height: 35px;
         }
-        .up_title{
-          font-size:52px;
-          font-weight:500;
-          color:rgba(51,51,51,1);
-          line-height:73px;
+        .up_title {
+          font-size: 42px;
+          font-weight: 400;
+          color: rgba(51, 51, 51, 1);
+          line-height: 73px;
         }
       }
-      .down{
-        .option{
+      .down {
+        .option {
           margin-top: 40px;
           width: 100%;
           height: 70px;
@@ -478,37 +482,37 @@
           display: -webkit-flex;
           display: -ms-flexbox;
           display: flex;
-          .option_list{
+          .option_list {
             -webkit-box-flex: 1;
             -webkit-flex: 1;
             -ms-flex: 1;
             flex: 1;
             text-align: center;
-            font-size:26px;
-            font-weight:500;
-            color:rgba(51,51,51,1);
-            line-height:37px;
+            font-size: 26px;
+            font-weight: 500;
+            color: rgba(51, 51, 51, 1);
+            line-height: 37px;
             line-height: 70px;
           }
-          .option_list:hover{
+          .option_list:hover {
             border-bottom: 5px solid #003971;
-            cursor:pointer;
+            cursor: pointer;
           }
-          .option_list:visited{
+          .option_list:visited {
             color: red;
           }
         }
-        .img_list{
+        .img_list {
           width: 100%;
           height: 570px;
-          .item{
+          .item {
             float: left;
             width: 360px;
             height: 237px;
             margin-left: 20px;
             margin-right: 20px;
             margin-top: 30px;
-            img{
+            img {
               width: 360px;
               height: 237px;
               border-radius: 8px;
@@ -517,66 +521,65 @@
         }
       }
 
-
     }
-    .news{
+    .news {
       width: 1200px;
       margin: 0 auto;
       text-align: center;
-      .up{
+      .up {
         margin-top: 70px;
-        .up_title{
-          font-size:52px;
-          font-weight:500;
-          color:rgba(51,51,51,1);
-          line-height:73px;
+        .up_title {
+          font-size: 42px;
+          font-weight: 400;
+          color: rgba(51, 51, 51, 1);
+          line-height: 73px;
         }
       }
-      .down{
+      .down {
         width: 100%;
         height: 370px;
         margin-top: 49px;
-        .news_list{
-          width:276px;
+        .news_list {
+          width: 276px;
           height: 370px;
           float: left;
           margin-left: 12px;
           margin-right: 12px;
           /*background-color: blanchedalmond;*/
-          img{
-            width:276px;
+          img {
+            width: 276px;
             height: 180px;
             border-radius: 8px;
           }
         }
-        .title{
-          font-size:22px;
-          font-weight:800;
-          color:rgba(51,51,51,1);
-          line-height:30px;
+        .title {
+          font-size: 22px;
+          font-weight: 800;
+          color: rgba(51, 51, 51, 1);
+          line-height: 30px;
         }
-        .time{
-          font-size:16px;
-          line-height:30px;
-          font-weight:500;
-          color:rgba(51,51,51,1);
+        .time {
+          font-size: 16px;
+          line-height: 30px;
+          font-weight: 500;
+          color: rgba(51, 51, 51, 1);
         }
-        .detail{
-          font-size:16px;
-          font-weight:500;
-          color:rgba(102,102,102,1);
-          line-height:25px;
+        .detail {
+          font-size: 16px;
+          font-weight: 500;
+          color: rgba(102, 102, 102, 1);
+          line-height: 25px;
           max-height: 75px;
           width: 276px;
 
-          text-align:justify;
+          text-align: justify;
           letter-spacing: 0;
-          display: -webkit-box;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
+
           overflow: hidden;
           text-overflow: ellipsis;
-          word-break: break-all;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
         }
       }
     }

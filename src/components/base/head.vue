@@ -28,7 +28,7 @@
     <div class="navigation">
       <div class="nav_main">
         <div class="list" @click="changeBody('home')">首页</div>
-        <div class="list" @click="changeBody('zhongyang')">中央空调维修</div>
+        <div class="list" @click="changeBody('zhongyang')">中央空调</div>
         <div class="list" @click="changeBody('banshi')">板式换热器维保</div>
         <div class="list" @click="changeBody('duolianji')">多联机机组维保</div>
         <div class="list" @click="changeBody('chanpin')">产品中心</div>
@@ -69,7 +69,7 @@
   .navigation{
     min-width: 1200px;
     width: 100%;
-    height: 45px;
+    height: 70px;
     background-color: #003871;
     color: white;
 
@@ -90,7 +90,7 @@
         -ms-flex: 1;
         flex: 1;
 
-        line-height: 45px;
+        line-height: 70px;
       }
       .list:hover{
         background-color: #003871 - 20;

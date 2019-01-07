@@ -51,8 +51,8 @@
               </div>
               <div class="contact">
                 <div class="leader" style="line-height: 50px;">联系我们</div>
-                <div style="margin-top: 10px;line-height: 1.6">
-                  全国服务热线：<span style="color: #55abe6;font-size: 25px;">400-123-321</span>
+                <div style="margin-top: 4px;line-height: 1.6">
+                  全国服务热线：<span style="color: #55abe6;font-size: 28px;">400-123-321</span>
                   <br/>
                   传真：010123123321<br/>
                   邮编：471300<br/>
@@ -168,11 +168,11 @@ export default {
   .beian{
     font-size: 14px;
     background-color: #272a2f;
-    height: 35px;
+    height: 58px;
     color: #7e8283;
     .beian_cen{
       text-align: center;
-      line-height: 35px;
+      line-height: 65px;
       width: 1200px;
       margin: 0 auto;
     }
