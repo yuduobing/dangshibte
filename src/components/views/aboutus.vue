@@ -39,7 +39,7 @@
     <div   v-if="!show" class="right"  >
       <!--标题-->
       <div class="rhead">
-        <div style="float: left; font-size: 25px;margin-top: 15px; color:cornflowerblue ">关于我们</div>
+        <div style="float: left; font-size: 25px;margin-top: 15px; color:cornflowerblue ">售后服务</div>
         <div style="float: right;margin-top: 20px;">首页>关于我们</div>
       </div>
       <!--设置宽度为800-->

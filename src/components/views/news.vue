@@ -24,12 +24,12 @@
       <div @click="change(item.index)" v-for="(item,index) in news" :key="index">
         <div class="new">
 
-          <div style="padding-left: 3px;padding-right: 3px;border:1px solid #f5f5f5;display: inline-block ">
+          <div class="img_border">
             <img :src="item.img" class="new-img"/></div>
           <div class="new-content">
 
-            <h1>{{item.title}}</h1>
-            <br><br>
+            <div class="title">{{item.title}}</div>
+            <br>
             <!--//限制字数文字-->
             <div  class="news-text"> {{item.content}} </div>
             <br><br>
@@ -238,16 +238,8 @@
     padding-bottom: 250px;
   }
 
-  .new-img {
-    width: 268px;
-    height: 178px;
-    background: rgba(216, 216, 216, 1);
-    border-radius: 5px;
-  }
 
-  .new-img:hover {
-    transform: scale(1.2);
-  }
+
 
   .font1 {
     margin-right: 91px;
