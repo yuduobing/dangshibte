@@ -24,9 +24,10 @@ import Duolianji from './components/views/duolianji'
 import Chanpin from './components/views/chanpin'
 import Case from './components/views/case'
 import News from './components/views/news'
+
 import Aboutus from './components/views/aboutus'
 import Contactus from './components/views/contactus'
-
+import 'babel-polyfill'
 //element 样式
 import 'element-ui/lib/theme-chalk/index.css'
 

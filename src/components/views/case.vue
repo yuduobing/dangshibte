@@ -20,8 +20,8 @@
       <div class="right">
         <!--标题-->
         <div class="rhead">
-          <div style="float: left; font-size: 25px;margin-top: 15px; color:cornflowerblue ">产品列表</div>
-          <div style="float: right;margin-top: 20px;">首页>中央空调</div>
+          <div style="float: left; font-size: 25px;margin-top: 15px; color:cornflowerblue ">工程案例</div>
+          <div style="float: right;margin-top: 20px;">首页>工程案例</div>
         </div>
         <!--新闻列表-->
         <div @click="change(item.title)" v-for="(item,index) in news" :key="index">

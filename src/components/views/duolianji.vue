@@ -7,7 +7,7 @@
 
       <div class="left">
         <div class="list">
-          <div class="title">多联机机组维护</div>
+          <div class="title">多联机机组维保</div>
           <div @click="changelist(item.index)" v-for="(item,index) in list " :key="index">
             <div class="content">{{item.content}}</div>
           </div>
@@ -19,8 +19,8 @@
       <div class="right">
         <!--标题-->
         <div class="rhead">
-          <div style="float: left; font-size: 25px;margin-top: 15px; color:cornflowerblue ">产品列表</div>
-          <div style="float: right;margin-top: 20px;">首页>多联机机组维护</div>
+          <div style="float: left; font-size: 25px;margin-top: 15px; color:cornflowerblue ">多联机机组维保</div>
+          <div style="float: right;margin-top: 20px;">首页>多联机机组维保</div>
         </div>
         <!--新闻列表-->
         <div @click="change(item.title)" v-for="(item,index) in news" :key="index">

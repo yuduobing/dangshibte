@@ -22,7 +22,7 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/main.js'
+    app: ["babel-polyfill", "./src/main.js"]
   },// 在webpack.base.conf.js配置文件中配置BMap,(创建BMap对象)，在module.exports 中与entry平级；
   externals: {
     'BMap': 'BMap',
