@@ -48,7 +48,7 @@
 
   import { Input } from  'element-ui'
   export default {
-    name: 'head',
+    name: 'header',
     components: { Input },
     data () {
       return {

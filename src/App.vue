@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 
-    <Head v-on:change="getBodyName"></Head>
+    <Header v-on:change="getBodyName"></Header>
 
     <!--<router-view/>-->
     <!--网页最小高度600,，最小宽度1200-->
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import Head from './components/base/head'
+import Header from './components/base/header'
 import Foot from './components/base/foot'
 
 import Home from './components/views/home'
@@ -32,7 +32,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 export default {
   name: 'App',
-  components: {Head,
+  components: {Header,
     Foot,
     Home,
     Zhongyang,

@@ -21,7 +21,7 @@
       <!--标题-->
       <div class="rhead">
         <div style="float: left; font-size: 25px;margin-top: 15px; color:cornflowerblue ">板式换热器维保</div>
-        <div style="float: right;margin-top: 20px;">首页>板式换热器维保></div>
+        <div style="float: right;margin-top: 20px;">首页>板式换热器维保</div>
       </div>
       <!--新闻列表-->
       <div @click="change(item.title)" v-for="(item,index) in news" :key="index">

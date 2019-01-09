@@ -116,13 +116,17 @@
       </div>
       <div class="down">
         <div class="option">
-          <div class="option_list" @click="changeImg('yiliao')">医疗机构</div>
-          <div class="option_list" @click="changeImg('jiaoyu')">教育培训</div>
-          <div class="option_list" @click="changeImg('zhengfu')">政府机关</div>
-          <div class="option_list" @click="changeImg('gongchang')">工厂厂房</div>
-          <div class="option_list" @click="changeImg('bangongshi')">办公室</div>
-          <div class="option_list" @click="changeImg('zhineng')">智能家居</div>
-          <div class="option_list" @click="changeImg('jiudian')">酒店餐饮</div>
+          <div class="option_list" v-bind:class="{active: selected === 1}" @click="changeImg('yiliao', 1)">
+            医疗机构
+          </div>
+
+
+          <div class="option_list" v-bind:class="{active: selected === 2}" @click="changeImg('jiaoyu', 2)">教育培训</div>
+          <div class="option_list" v-bind:class="{active: selected === 3}" @click="changeImg('zhengfu',3)">政府机关</div>
+          <div class="option_list" v-bind:class="{active: selected === 4}" @click="changeImg('gongchang', 4)">工厂厂房</div>
+          <div class="option_list" v-bind:class="{active: selected === 5}" @click="changeImg('bangongshi', 5)">办公室</div>
+          <div class="option_list" v-bind:class="{active: selected === 6}" @click="changeImg('zhineng', 6)">智能家居</div>
+          <div class="option_list" v-bind:class="{active: selected === 7}" @click="changeImg('jiudian', 7)">酒店餐饮</div>
         </div>
         <div class="img_list">
           <!--<div class="item"><img :src="showImg.experience1" /></div>-->
@@ -131,7 +135,7 @@
           <!--<div class="item"><img :src="showImg.experience4" /></div>-->
           <!--<div class="item"><img :src="showImg.experience5" /></div>-->
           <!--<div class="item"><img :src="showImg.experience6" /></div>-->
-          <div class="item" v-for="i in showImg"><img :src="i"/></div>
+          <div class="item" v-for="i in showImg" :key="i"><img :src="i"/></div>
         </div>
       </div>
     </div>
@@ -191,6 +195,7 @@
 </template>
 
 <script>
+  import shangjiantou from '../../assets/img/shangjiantou.png'
   import homeFace from '../../assets/img/home_face.png'
   import fw1 from '../../assets/img/fw1.jpg'
   import fw2 from '../../assets/img/fw2.jpg'
@@ -260,7 +265,8 @@
         img: {
           homeFace, fw1, fw2, fw3, fw4, fw5, fw6, fw7, fw8,
           advantage_team, advantage_design, advantage_install, advantage_service, process,
-          news1, news2, news3, news4, loding
+          news1, news2, news3, news4, loding,
+          shangjiantou
         },
         yiliaoImg: {experience1, experience2, experience3, experience4, experience5, experience6},
         jiaoyuImg: {caseju1, caseju2, caseju3, caseju4, caseju5, caseju6,},
@@ -269,16 +275,22 @@
         bangongshiImg: {office1, office2},
         zhinengImg: {zhineng1, zhineng2, zhineng3, zhineng4, zhineng5, zhineng6},
         jiudianImg: {hotel1, hotel2, hotel3, hotel4},
-        showImg: {experience1, experience2, experience3, experience4, experience5, experience6}
+        showImg: {experience1, experience2, experience3, experience4, experience5, experience6},
+        selected: 1
+
       }
     },
     methods: {
-      changeImg (value) {
+      changeImg (value, select) {
+        this.selected = select
+        console.log(value)
         if (value === 'yiliao') {
           this.showImg = this.yiliaoImg
         }
         if (value === 'jiaoyu') {
+          console.log(true)
           this.showImg = this.jiaoyuImg
+          console.log(this.showImg)
         }
         if (value === 'zhengfu') {
           this.showImg = this.zhengfuImg
@@ -295,6 +307,9 @@
         if (value === 'jiudian') {
           this.showImg = this.jiudianImg
         }
+      },
+      loding () {
+
       }
     }
   }
@@ -491,15 +506,22 @@
             font-size: 26px;
             font-weight: 500;
             color: rgba(51, 51, 51, 1);
-            line-height: 37px;
-            line-height: 70px;
+            /*line-height: 37px;*/
+            line-height: 50px;
+
+
           }
           .option_list:hover {
-            border-bottom: 5px solid #003971;
+            background-image: url("../../assets/img/shangjaintou2.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            /*border-bottom: 5px solid #003971;*/
             cursor: pointer;
           }
-          .option_list:visited {
-            color: red;
+          .active{
+            background-image: url("../../assets/img/shangjaintou2.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
           }
         }
         .img_list {
@@ -584,4 +606,5 @@
       }
     }
   }
+
 </style>
