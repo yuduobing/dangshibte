@@ -16,7 +16,7 @@
 
     </div>
     <transition name="slide-fade" >
-    <div v-if="show" class="right"  v-cloak>
+    <div v-if="show" class="right"  >
       <div class="rhead">
         <div style="float: left; font-size: 25px;margin-top: 15px; color:cornflowerblue ">新闻资讯</div>
         <div style="float: right;margin-top: 20px;">首页>关于我们</div>
@@ -155,6 +155,7 @@
       changelist (e) {
         // 点击左侧导航栏对应的事件
         console.log(e)
+        this.show=true
       },
       change (e) {
          console.log(e)
@@ -166,8 +167,16 @@
         }
         else {
           // ajax请求复制到newsinforamtion
-          this.show=!this.show
+
+
+
+
+
+
+
           // 延迟显示过度动画
+          this.show=!this.show
+
           setTimeout(() => {
             this.cshow=!this.cshow;
 

@@ -1,5 +1,9 @@
-
+<!--产品中心-->
       <template>
+        <div>
+        <div class="faces_img">
+          <img src="../../assets/img/head4.png" />
+        </div>
         <div style="width: 1200px;margin: 0 auto;overflow: hidden;padding-bottom: 60px">
 
           <div class="left">
@@ -36,7 +40,7 @@
 
           </div>
 
-        </div>
+        </div>      </div>
 
       </template>
 

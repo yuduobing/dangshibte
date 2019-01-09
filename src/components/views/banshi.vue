@@ -1,5 +1,9 @@
-
+<!--板式换热器-->
 <template>
+  <div>
+  <div class="faces_img">
+    <img src="../../assets/img/head3.png" />
+  </div>
   <div style="width: 1200px;margin: 0 auto;overflow: hidden;padding-bottom: 60px">
 
     <div class="left">
@@ -13,7 +17,7 @@
 
     </div>
 
-    <div class="right">
+    <div   v-if="show" class="right">
       <!--标题-->
       <div class="rhead">
         <div style="float: left; font-size: 25px;margin-top: 15px; color:cornflowerblue ">板式换热器维保</div>
@@ -35,21 +39,24 @@
       </div>
 
     </div>
-
+    <div   v-if="!show"  class="right"  >
+      <detail :index="detailColumn" index></detail>
   </div>
-
+  </div>  </div>
 </template>
 
 <script>
   import information from '../base/information'
   import img from '../../assets/img/img1.png'
-
+  import detail from '../base/detail'
   export default {
     name: 'zhongyang',
-    components: {information},
+    components: {information,detail},
     data () {
       return {
-
+        detail_id:1,
+        // 显示新闻列表
+        show: true,
         news: [
           {
             title: '超级多联3Max/4Max系列',
@@ -87,8 +94,15 @@
       }
     },
     methods: {
+      // 点击左侧导航栏对应时间
       changelist (e) {
+        this.show=true
         // 点击左侧导航栏对应的事件
+
+        //发送ajax请求把数据保存到news
+
+
+
         if(e===1){
           console.log("进来了")
           this.news = this.news1.slice(0)
@@ -105,6 +119,14 @@
         else if(e===4){
           this.news = this.news4.slice(0)
         }
+      },
+      // 点击详情页对应事件
+      change (e) {
+
+        this.detail_id=e;
+
+        this.show=!this.show;
+
       }
 
     }

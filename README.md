@@ -17,8 +17,13 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
-
+        <div class="list" @click="changeBody('home')">首页</div>
+        <div class="list" @click="changeBody('zhongyang')">中央空调</div>
+        <div class="list" @click="changeBody('banshi')">板式换热器维保</div>
+        <div class="list" @click="changeBody('duolianji')">多联机机组维保</div>
+        <div class="list" @click="changeBody('chanpin')">产品中心</div>
+        <div class="list" @click="changeBody('case')">工程案例</div>
+        <div class="list" @click="changeBody('news')">新闻资讯</div>
+        <div class="list" @click="changeBody('aboutus')">关于我们</div>
+        <div class="list" @click="changeBody('contactus')">联系我们</div>
 
