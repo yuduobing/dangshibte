@@ -1,60 +1,65 @@
 <template>
   <div>
-  <div class="faces_img">
-    <img src="../../assets/img/zy.png" />
-  </div>
-  <div style="width: 1200px;margin: 0 auto;overflow: hidden;padding-bottom: 60px">
-
-    <div class="left">
-      <div class="list">
-        <div class="title">中央空调维保</div>
-        <div @click="changelist(item.index)" v-for="(item,index) in list " :key="index">
-          <div class="content">{{item.content}}</div>
-        </div>
-        <information></information>
-      </div>
-
+    <div class="faces_img">
+      <img src="../../assets/img/zy.png" />
     </div>
+    <div style="width: 1200px;margin: 0 auto;overflow: hidden;padding-bottom: 60px">
 
-    <div class="right">
-      <!--标题-->
-      <div class="rhead">
-        <div style="float: left; font-size: 25px;margin-top: 15px; color:cornflowerblue ">产品列表</div>
-        <div style="float: right;margin-top: 20px;">首页>中央空调</div>
+      <div class="left">
+        <div class="list">
+          <div class="title">中央空调维保</div>
+          <div @click="changelist(item.index)" v-for="(item,index) in list " :key="index">
+            <div class="content">{{item.content}}</div>
+          </div>
+          <information></information>
+        </div>
+
       </div>
-      <!--新闻列表-->
-      <div @click="change(item.title)" v-for="(item,index) in news" :key="index">
-        <div class="new">
 
-          <div class="img_border">
-            <img :src="item.img" class="new-img"/></div>
-          <div class="new-content">
+      <div   v-if="show" class="right">
+        <!--标题-->
+        <div class="rhead">
+          <div style="float: left; font-size: 25px;margin-top: 15px; color:cornflowerblue ">产品中心</div>
+          <div style="float: right;margin-top: 20px;">首页>中央空调维保</div>
+        </div>
+        <!--新闻列表-->
+        <div @click="change(id+1)" v-for="(item,id) in news" :key="id">
+          <div class="new">
 
-            <div class="title">{{item.title}}</div>
-            <br>
-            <!--//限制字数文字-->
-            <div  class="news-text"> {{item.content}} </div>
-            <br><br>
-            <p style="color: #00b0ff;"> 查看详情  </p>
+            <div class="img_border">
+              <img :src="item.img" class="new-img"/></div>
+            <div class="new-content">
+
+              <div class="title">{{item.title}}</div>
+              <br>
+              <!--//限制字数文字-->
+              <div  class="news-text"> {{item.content}} </div>
+              <br><br>
+              <p style="color: #00b0ff;"> 查看详情  </p>
+            </div>
           </div>
         </div>
+
       </div>
-
-    </div>
-
-  </div>
-  </div>
+      <div   v-if="!show"   >
+        <detail  :detailId="detail_id"  :detailColumn="detail_column"  > </detail>
+      </div>
+    </div>  </div>
 </template>
-
 <script>
   import information from '../base/information'
   import img from '../../assets/img/img1.png'
-
+  import detail from '../base/detail'
   export default {
     name: 'zhongyang',
-    components: {information},
+    components: {information,detail},
     data () {
       return {
+        detail_column:1,
+        // 哪一
+        detail_id:1,
+        // 显示新闻列表
+        show: true,
     //暂存数组
         news: [
           {
@@ -150,26 +155,39 @@
     }
     },
     methods: {
+      // 点击左侧导航栏对应时间
       changelist (e) {
-        // 点击左侧导航栏对应的事件
         console.log(e)
+        this.show=true
+        // 点击左侧导航栏对应的事件
+        this.detail_column=e;
+        //发送ajax请求把数据保存到news
+
+
+
         if(e===1){
           console.log("进来了")
           this.news = this.news1.slice(0)
           console.log(this.news)
         }
         else if(e===2){
-         console.log("进来了")
-         this.news = this.news2.slice(0)
-         console.log(this.news)
-       }
+          console.log("进来了")
+          this.news = this.news2.slice(0)
+          console.log(this.news)
+        }
         else if(e===3){
           this.news = this.news3.slice(0)
         }
-       else if(e===4){
+        else if(e===4){
           this.news = this.news4.slice(0)
         }
+      },
+      // 点击详情页对应事件
+      change (e) {
 
+        this.detail_id=e;
+
+        this.show=!this.show;
 
       }
 

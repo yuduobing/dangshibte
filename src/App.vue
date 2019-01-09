@@ -14,6 +14,7 @@
 </template>
 
 <script>
+  import 'babel-polyfill'
 import Header from './components/base/header'
 import Foot from './components/base/foot'
 
@@ -27,7 +28,7 @@ import News from './components/views/news'
 
 import Aboutus from './components/views/aboutus'
 import Contactus from './components/views/contactus'
-import 'babel-polyfill'
+
 //element 样式
 import 'element-ui/lib/theme-chalk/index.css'
 

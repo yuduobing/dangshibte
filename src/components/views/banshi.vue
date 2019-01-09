@@ -24,7 +24,7 @@
         <div style="float: right;margin-top: 20px;">首页>板式换热器维保</div>
       </div>
       <!--新闻列表-->
-      <div @click="change(item.title)" v-for="(item,index) in news" :key="index">
+      <div @click="change(id+1)" v-for="(item,id) in news" :key="id">
         <div class="new">
 
           <div class="img_border">
@@ -42,8 +42,8 @@
       </div>
 
     </div>
-    <div   v-if="!show"  class="right"  >
-      <detail :index="detailColumn" index></detail>
+    <div   v-if="!show"   >
+      <detail  :detailId="detail_id"  :detailColumn="detail_column"  > </detail>
   </div>
   </div>  </div>
 </template>
@@ -57,6 +57,9 @@
     components: {information,detail},
     data () {
       return {
+        // 哪一系列
+        detail_column:1,
+        // 哪一
         detail_id:1,
         // 显示新闻列表
         show: true,
@@ -99,9 +102,10 @@
     methods: {
       // 点击左侧导航栏对应时间
       changelist (e) {
+        console.log(e)
         this.show=true
         // 点击左侧导航栏对应的事件
-
+        this.detail_column=e;
         //发送ajax请求把数据保存到news
 
 
