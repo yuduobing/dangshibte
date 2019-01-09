@@ -9,7 +9,7 @@
   </div>
   <!--设置宽度为800-->
   <div class="contact">
-    {{column}}{{}}
+    传递给后台{{detailColumn}}{{detailId}}
     <br><br>
     <h2 align="center">
       {{newsinformation.title}}</h2><br><br>

@@ -553,7 +553,7 @@
           }
         }
         .title {
-          font-size: 22px;
+          font-size: 24px;
           font-weight: 800;
           color: rgba(51, 51, 51, 1);
           line-height: 30px;

@@ -27,13 +27,16 @@
       <div @click="change(item.title)" v-for="(item,index) in news" :key="index">
         <div class="new">
 
-          <div style="padding-left: 3px;padding-right: 3px;border:1px solid #f5f5f5;display: inline-block ">
+          <div class="img_border">
             <img :src="item.img" class="new-img"/></div>
           <div class="new-content">
 
-            <h1>{{item.title}}</h1>
+            <div class="title">{{item.title}}</div>
+            <br>
+            <!--//限制字数文字-->
             <div  class="news-text"> {{item.content}} </div>
-
+            <br><br>
+            <p style="color: #00b0ff;"> 查看详情  </p>
           </div>
         </div>
       </div>
