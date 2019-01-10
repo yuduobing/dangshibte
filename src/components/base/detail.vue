@@ -12,7 +12,7 @@
 
     <br><br>
     <h2 align="center">
-      传递给后台測試數據{{detailColumn}}{{detailId}}
+      传递给后台测试数据{{detailColumn}}{{detailId}}
       <!--{{newsinformation.title}}-->
     </h2><br><br>
     <span align="center">发布时间:&nbsp;{{newsinformation.time}} </span>
